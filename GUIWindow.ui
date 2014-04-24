@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1054</width>
+    <width>1122</width>
     <height>853</height>
    </rect>
   </property>
@@ -24,7 +24,7 @@
        <attribute name="title">
         <string>Step 1: Load</string>
        </attribute>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>150</x>
@@ -39,7 +39,10 @@
            <item>
             <widget class="QLabel" name="label_4">
              <property name="text">
-              <string>Extrinsic:</string>
+              <string>Extrinsic</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -56,6 +59,9 @@
 Extrinsic
 Parameters</string>
              </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
             </widget>
            </item>
           </layout>
@@ -65,7 +71,10 @@ Parameters</string>
            <item>
             <widget class="QLabel" name="label_6">
              <property name="text">
-              <string>Intrinsic_Left:</string>
+              <string>Intrinsic_Left</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -75,6 +84,9 @@ Parameters</string>
               <string>Please Load
 Intrinsic
 Parameters</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -87,6 +99,9 @@ Parameters</string>
              <property name="text">
               <string>Intrinsic_Right:</string>
              </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
             </widget>
            </item>
            <item>
@@ -95,6 +110,9 @@ Parameters</string>
               <string>Please Load
 Intrinsic
 Parameters</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -117,7 +135,7 @@ Parameters</string>
            <item>
             <widget class="QLabel" name="label">
              <property name="text">
-              <string>Image/Video Path:</string>
+              <string>Video Path:</string>
              </property>
             </widget>
            </item>
@@ -179,6 +197,32 @@ Parameters</string>
         </property>
         <property name="text">
          <string>Load</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Btn_Load_LImg">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>310</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load Left</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Btn_Load_RImg">
+        <property name="geometry">
+         <rect>
+          <x>680</x>
+          <y>310</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load Right</string>
         </property>
        </widget>
        <widget class="QSplitter" name="splitter">
@@ -310,21 +354,13 @@ Parameters</string>
      </widget>
     </item>
    </layout>
-   <zorder>Label_ExMat</zorder>
-   <zorder>Label_InMat_Left</zorder>
-   <zorder>label_4</zorder>
-   <zorder>label_6</zorder>
-   <zorder>label_7</zorder>
-   <zorder>Label_InMat_Right</zorder>
-   <zorder>Label_ExMat</zorder>
-   <zorder>tabWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1054</width>
+     <width>1122</width>
      <height>21</height>
     </rect>
    </property>

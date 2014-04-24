@@ -40,6 +40,8 @@ GUIWindow::GUIWindow()
 	connect(this->ui->Btn_Load_Extrinsic, SIGNAL(clicked()), this, SLOT(Btn_Load_Extrinsic_Click()));
 	connect(this->ui->Btn_Load_Intrinsic, SIGNAL(clicked()), this, SLOT(Btn_Load_Intrinsic_Click()));
 	connect(this->ui->Btn_Next_Frame, SIGNAL(clicked()), this, SLOT(Btn_Next_Frame_Click()));
+	connect(this->ui->Btn_Load_LImg, SIGNAL(clicked()), this, SLOT(Btn_Load_LImg_Click()));
+	connect(this->ui->Btn_Load_RImg, SIGNAL(clicked()), this, SLOT(Btn_Load_RImg_Click()));
 	connect(this->ui->actionOpen_Image, SIGNAL(triggered()), this, SLOT(Action_Open_Trigger()));
 }
 // 
@@ -150,5 +152,44 @@ void GUIWindow::Btn_Load_Intrinsic_Click()
 
 void GUIWindow::Btn_Next_Frame_Click()
 {
+	QPixmap left_pic("view1.png");
+	QPixmap right_pic("view5.png");
+	// get label dimensions
+	int w = this->ui->label_left_img->width();
+	int h = this->ui->label_left_img->height();
 
+	// set a scaled pixmap to a w x h window keeping its aspect ratio 
+	this->ui->label_left_img->setPixmap(left_pic.scaled(w,h,Qt::KeepAspectRatio));
+	this->ui->label_right_img->setPixmap(right_pic.scaled(w,h,Qt::KeepAspectRatio));
+}
+
+void GUIWindow::Btn_Load_LImg_Click()
+{
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Open Left Image File"),
+		QString(), tr("Image File (*.jpg *.png *.bmp)"));
+
+	if (!fileName.isEmpty())
+	{
+		QPixmap pic(fileName);
+		// get label dimensions
+		int w = this->ui->label_left_img->width();
+		int h = this->ui->label_left_img->height();
+		// set a scaled pixmap to a w x h window keeping its aspect ratio 
+		this->ui->label_left_img->setPixmap(pic.scaled(w,h,Qt::KeepAspectRatio));
+	}
+}
+
+void GUIWindow::Btn_Load_RImg_Click()
+{
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Open Left Image File"),
+		QString(), tr("Image File (*.jpg *.png *.bmp)"));
+	if (!fileName.isEmpty())
+	{
+		QPixmap pic(fileName);
+		// get label dimensions
+		int w = this->ui->label_right_img->width();
+		int h = this->ui->label_right_img->height();
+		// set a scaled pixmap to a w x h window keeping its aspect ratio 
+		this->ui->label_right_img->setPixmap(pic.scaled(w,h,Qt::KeepAspectRatio));
+	}
 }
