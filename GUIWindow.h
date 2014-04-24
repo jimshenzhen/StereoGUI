@@ -5,6 +5,7 @@
 
 #include <QMainWindow>
 #include <QtWidgets>
+#include <opencv2/opencv.hpp>
 
 // Forward Qt class declarations
 class Ui_GUIWindow;

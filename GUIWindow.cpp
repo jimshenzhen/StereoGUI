@@ -50,45 +50,100 @@ GUIWindow::GUIWindow()
 void GUIWindow::Btn_Load_Extrinsic_Click()
 {
 	QString fileName = QFileDialog::getOpenFileName(this, tr("Open Extrinsic File"),
-		QString(), tr("Text Files (*.txt);;XML/YML Files (*.xml *.yml)"));
+		QString(), tr("XML/YML Files (*.xml *.yml);;Text Files (*.txt)"));
 
+	cv::Mat R, T;
 	if (!fileName.isEmpty())
 	{
 		this->ui->lineEdit_Extrinsic->setText(fileName);
-// 		QFile file(fileName);
-// 		if (!file.open(QIODevice::ReadOnly))
-// 		{
-// 			QMessageBox::critical(this, tr("Error"), tr("Could not open file"));
-// 			return;
-// 		}
-// 		QTextStream in (&file);
-// 		ui->textEdit->setText(in.readAll());
-// 		file.close();
+
+		// Read camera parameters
+		cv::FileStorage fs;
+		if (!fs.open(fileName.toStdString(), cv::FileStorage::READ))
+		{
+			QMessageBox::information(this, "Error", "Cannot open the file");
+		}
+		fs["R"] >> R; fs["T"] >> T;
+		fs.release();
+		QString s;
+		QTextStream in(&s);
+		in.setRealNumberPrecision(4);
+// 		in << R.at<double>(0, 0) << ", " << R.at<double>(0, 1) << ", " << R.at<double>(0, 2) << ", " << T.at<double>(0) << "\n";
+// 		in << R.at<double>(1, 0) << ", " << R.at<double>(1, 1) << ", " << R.at<double>(1, 2) << ", " << T.at<double>(1) << "\n";
+// 		in << R.at<double>(2, 0) << ", " << R.at<double>(2, 1) << ", " << R.at<double>(2, 2) << ", " << T.at<double>(2) << "\n";
+// 		in << 0 << ", " << 0 << ", " << 0 << ", "<< 1;
+
+		for(int i=0; i<R.size().height; i++)
+		{
+			in << "[";
+			for(int j=0; j<R.size().width; j++)
+			{
+				in << R.at<double>(i,j);
+				if(j != R.size().width-1)
+					in << ", ";
+				else
+					in << ", " << T.at<double>(i) << "]" << endl;
+			}
+		}
+		ui->Label_ExMat->setText(s);
+
 	}
 }
 
 void GUIWindow::Btn_Load_Intrinsic_Click()
 {
 	QString fileName = QFileDialog::getOpenFileName(this, tr("Open Intrinsic File"),
-		QString(), tr("Text Files (*.txt);;XML/YML Files (*.xml *.yml)"));
+		QString(), tr("XML/YML Files (*.xml *.yml);;Text Files (*.txt)"));
 
+	cv::Mat M1, M2, D1, D2;
 	if (!fileName.isEmpty())
 	{
 		this->ui->lineEdit_Intrinsic->setText(fileName);
-		// 		QFile file(fileName);
-		// 		if (!file.open(QIODevice::ReadOnly))
-		// 		{
-		// 			QMessageBox::critical(this, tr("Error"), tr("Could not open file"));
-		// 			return;
-		// 		}
-		// 		QTextStream in (&file);
-		// 		ui->textEdit->setText(in.readAll());
-		// 		file.close();
+
+		// Read camera parameters
+		cv::FileStorage fs;
+		if (!fs.open(fileName.toStdString(), cv::FileStorage::READ))
+		{
+			QMessageBox::information(this, "Error", "Cannot open the file");
+		}
+		fs["M1"] >> M1; fs["M2"] >> M2;
+		fs["D1"] >> D1; fs["D2"] >> D2;
+		fs.release();
+		QString ls, rs;
+		QTextStream lin(&ls), rin(&rs);
+		lin.setRealNumberPrecision(5);
+		rin.setRealNumberPrecision(5);
+		for(int i=0; i<M1.size().height; i++)
+		{
+			lin << "[";
+			rin << "[";
+			for(int j=0; j<M1.size().width; j++)
+			{
+				lin << M1.at<double>(i,j);
+				rin << M2.at<double>(i,j);
+				if(j != M1.size().width-1)
+				{
+					lin << ", ";
+					rin << ", ";
+				}
+				else
+				{
+					lin << "]" << endl;
+					rin << "]" << endl; 
+				}
+			}
+		}
+		lin << "[" << D1.at<double>(0) << ", " << D1.at<double>(1) << ", " << D1.at<double>(1) << ", " << D1.at<double>(3) << ", " << D1.at<double>(4) << "]" << endl;
+		rin << "[" << D2.at<double>(0) << ", " << D2.at<double>(1) << ", " << D2.at<double>(1) << ", " << D2.at<double>(3) << ", " << D2.at<double>(4) << "]" << endl; 
+
+		ui->Label_InMat_Left->setText(ls);
+		ui->Label_InMat_Right->setText(rs);
+
 	}
 }
 
 void GUIWindow::Btn_Next_Frame_Click()
 {
 	QString ss("1 2 3\n 4 5 6\n 7 8 9");
-	this->ui->test_label->setText(ss);
+// 	this->ui->test_label->setText(ss);
 }

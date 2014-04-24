@@ -181,72 +181,96 @@
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>370</y>
-      <width>321</width>
-      <height>81</height>
+      <x>22</x>
+      <y>351</y>
+      <width>741</width>
+      <height>121</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QSplitter" name="splitter">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>Extrinsic:</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="Label_ExMat">
-        <property name="text">
-         <string>Please Load
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Extrinsic:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Label_ExMat">
+         <property name="minimumSize">
+          <size>
+           <width>14</width>
+           <height>39</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Please Load
 Extrinsic
 Parameters</string>
-        </property>
-       </widget>
-      </widget>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
-      <widget class="QSplitter" name="splitter_2">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <widget class="QLabel" name="label_6">
-        <property name="text">
-         <string>Intrinsic_Left:</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="Label_InMat_Left">
-        <property name="text">
-         <string>Please Load
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Intrinsic_Left:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Label_InMat_Left">
+         <property name="text">
+          <string>Please Load
 Intrinsic
 Parameters</string>
-        </property>
-       </widget>
-      </widget>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
-      <widget class="QSplitter" name="splitter_3">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <widget class="QLabel" name="label_7">
-        <property name="text">
-         <string>Intrinsic_Right:</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="Label_InMat_Right">
-        <property name="text">
-         <string>Please Load
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Intrinsic_Right:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Label_InMat_Right">
+         <property name="text">
+          <string>Please Load
 Intrinsic
 Parameters</string>
-        </property>
-       </widget>
-      </widget>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </widget>
+   <zorder>qvtkWidget</zorder>
+   <zorder>Btn_Load_Extrinsic</zorder>
+   <zorder>Btn_Load_Intrinsic</zorder>
+   <zorder>label_5</zorder>
+   <zorder>Btn_Next_Frame</zorder>
+   <zorder>Btn_Save_Mesh</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>Label_ExMat</zorder>
+   <zorder>Label_InMat_Left</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_6</zorder>
+   <zorder>label_7</zorder>
+   <zorder>Label_InMat_Right</zorder>
+   <zorder>Label_ExMat</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
