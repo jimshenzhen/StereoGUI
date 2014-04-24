@@ -40,12 +40,23 @@ GUIWindow::GUIWindow()
 	connect(this->ui->Btn_Load_Extrinsic, SIGNAL(clicked()), this, SLOT(Btn_Load_Extrinsic_Click()));
 	connect(this->ui->Btn_Load_Intrinsic, SIGNAL(clicked()), this, SLOT(Btn_Load_Intrinsic_Click()));
 	connect(this->ui->Btn_Next_Frame, SIGNAL(clicked()), this, SLOT(Btn_Next_Frame_Click()));
+	connect(this->ui->actionOpen_Image, SIGNAL(triggered()), this, SLOT(Action_Open_Trigger()));
 }
 // 
 // void GUIWindow::slotExit() 
 // {
 // 	qApp->exit();
 // }
+
+void GUIWindow::Action_Open_Trigger()
+{
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Open Video/Image"),
+		QString(), tr("Video Files (*.avi *.mp4);;Image Files (*.jpg *.png *bmp)"));
+	if (!fileName.isEmpty())
+	{
+		this->ui->lineEdit_Vid->setText(fileName);
+	}
+}
 
 void GUIWindow::Btn_Load_Extrinsic_Click()
 {
@@ -68,10 +79,6 @@ void GUIWindow::Btn_Load_Extrinsic_Click()
 		QString s;
 		QTextStream in(&s);
 		in.setRealNumberPrecision(4);
-// 		in << R.at<double>(0, 0) << ", " << R.at<double>(0, 1) << ", " << R.at<double>(0, 2) << ", " << T.at<double>(0) << "\n";
-// 		in << R.at<double>(1, 0) << ", " << R.at<double>(1, 1) << ", " << R.at<double>(1, 2) << ", " << T.at<double>(1) << "\n";
-// 		in << R.at<double>(2, 0) << ", " << R.at<double>(2, 1) << ", " << R.at<double>(2, 2) << ", " << T.at<double>(2) << "\n";
-// 		in << 0 << ", " << 0 << ", " << 0 << ", "<< 1;
 
 		for(int i=0; i<R.size().height; i++)
 		{
@@ -86,7 +93,6 @@ void GUIWindow::Btn_Load_Extrinsic_Click()
 			}
 		}
 		ui->Label_ExMat->setText(s);
-
 	}
 }
 
@@ -133,17 +139,16 @@ void GUIWindow::Btn_Load_Intrinsic_Click()
 				}
 			}
 		}
+		// Distortion
 		lin << "[" << D1.at<double>(0) << ", " << D1.at<double>(1) << ", " << D1.at<double>(1) << ", " << D1.at<double>(3) << ", " << D1.at<double>(4) << "]" << endl;
 		rin << "[" << D2.at<double>(0) << ", " << D2.at<double>(1) << ", " << D2.at<double>(1) << ", " << D2.at<double>(3) << ", " << D2.at<double>(4) << "]" << endl; 
 
 		ui->Label_InMat_Left->setText(ls);
 		ui->Label_InMat_Right->setText(rs);
-
 	}
 }
 
 void GUIWindow::Btn_Next_Frame_Click()
 {
-	QString ss("1 2 3\n 4 5 6\n 7 8 9");
-// 	this->ui->test_label->setText(ss);
+
 }

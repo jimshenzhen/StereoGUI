@@ -6,264 +6,310 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>773</width>
-    <height>740</height>
+    <width>1054</width>
+    <height>853</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>StereoTool</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QVTKWidget" name="qvtkWidget">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>0</y>
-      <width>411</width>
-      <height>331</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Btn_Load_Extrinsic">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>520</y>
-      <width>41</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Load</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Btn_Load_Intrinsic">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>550</y>
-      <width>41</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Load</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>600</y>
-      <width>121</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Stereo Algorithm:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Btn_Next_Frame">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>650</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Next Frame</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Btn_Save_Mesh">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>650</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Save Mesh</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>620</y>
-      <width>233</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout_2">
-     <item row="0" column="0">
-      <widget class="QRadioButton" name="radioButton">
-       <property name="text">
-        <string>SGBM</string>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QRadioButton" name="radioButton_3">
-       <property name="text">
-        <string>BlockMatching</string>
-       </property>
-       <property name="checked">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="2">
-      <widget class="QRadioButton" name="radioButton_2">
-       <property name="text">
-        <string>PatchMatch</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>480</y>
-      <width>441</width>
-      <height>102</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Image/Video Path:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Camera Extrinsic:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Camera Intrinsic:</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QLineEdit" name="lineEdit_Vid"/>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_Extrinsic"/>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_Intrinsic"/>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>22</x>
-      <y>351</y>
-      <width>741</width>
-      <height>121</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Extrinsic:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="Label_ExMat">
-         <property name="minimumSize">
-          <size>
-           <width>14</width>
-           <height>39</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Please Load
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Step 1: Load</string>
+       </attribute>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>370</y>
+          <width>741</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>Extrinsic:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Label_ExMat">
+             <property name="minimumSize">
+              <size>
+               <width>14</width>
+               <height>39</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Please Load
 Extrinsic
 Parameters</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>Intrinsic_Left:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="Label_InMat_Left">
-         <property name="text">
-          <string>Please Load
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>Intrinsic_Left:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Label_InMat_Left">
+             <property name="text">
+              <string>Please Load
 Intrinsic
 Parameters</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
-       <item>
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>Intrinsic_Right:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="Label_InMat_Right">
-         <property name="text">
-          <string>Please Load
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>Intrinsic_Right:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Label_InMat_Right">
+             <property name="text">
+              <string>Please Load
 Intrinsic
 Parameters</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>500</y>
+          <width>441</width>
+          <height>102</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Image/Video Path:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Camera Extrinsic:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Camera Intrinsic:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLineEdit" name="lineEdit_Vid"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_Extrinsic"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_Intrinsic"/>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="Btn_Load_Extrinsic">
+        <property name="geometry">
+         <rect>
+          <x>720</x>
+          <y>540</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="contextMenuPolicy">
+         <enum>Qt::NoContextMenu</enum>
+        </property>
+        <property name="text">
+         <string>Load</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Btn_Load_Intrinsic">
+        <property name="geometry">
+         <rect>
+          <x>720</x>
+          <y>570</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load</string>
+        </property>
+       </widget>
+       <widget class="QSplitter" name="splitter">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>30</y>
+          <width>901</width>
+          <height>271</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <widget class="QLabel" name="label_left_img">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>Left Image</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <zorder>qvtkWidget</zorder>
-   <zorder>Btn_Load_Extrinsic</zorder>
-   <zorder>Btn_Load_Intrinsic</zorder>
-   <zorder>label_5</zorder>
-   <zorder>Btn_Next_Frame</zorder>
-   <zorder>Btn_Save_Mesh</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
+        <widget class="QLabel" name="label_right_img">
+         <property name="text">
+          <string>Right Image</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Tab 2</string>
+       </attribute>
+       <widget class="QVTKWidget" name="qvtkWidget">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>40</y>
+          <width>411</width>
+          <height>331</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget_5">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>620</y>
+          <width>233</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <widget class="QRadioButton" name="radioButton">
+           <property name="text">
+            <string>SGBM</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QRadioButton" name="radioButton_3">
+           <property name="text">
+            <string>BlockMatching</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QRadioButton" name="radioButton_2">
+           <property name="text">
+            <string>PatchMatch</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="Btn_Next_Frame">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>660</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Next Frame</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>600</y>
+          <width>121</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Stereo Algorithm:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Btn_Save_Mesh">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>660</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save Mesh</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
    <zorder>Label_ExMat</zorder>
    <zorder>Label_InMat_Left</zorder>
    <zorder>label_4</zorder>
@@ -271,13 +317,14 @@ Parameters</string>
    <zorder>label_7</zorder>
    <zorder>Label_InMat_Right</zorder>
    <zorder>Label_ExMat</zorder>
+   <zorder>tabWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>773</width>
+     <width>1054</width>
      <height>21</height>
     </rect>
    </property>

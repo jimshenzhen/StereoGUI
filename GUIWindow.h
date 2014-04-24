@@ -23,6 +23,7 @@ public:
 		void Btn_Load_Extrinsic_Click();
 		void Btn_Load_Intrinsic_Click();
 		void Btn_Next_Frame_Click();
+		void Action_Open_Trigger();
 
 private:
 
