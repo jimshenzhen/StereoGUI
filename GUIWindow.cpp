@@ -10,6 +10,8 @@
 #include <vtkSphereSource.h>
 #include <vtkSmartPointer.h>
 
+#include "QtOpenCVConversion.h"
+
 // Constructor
 GUIWindow::GUIWindow() 
 {
